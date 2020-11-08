@@ -17,7 +17,6 @@ export class Satellite {
     shouldShowWarning(): boolean {
         let inputType = this.type.toLowerCase();
         if (inputType === 'space debris') {
-            this.warning = "red";
             return true;
         } else {
             return false;
