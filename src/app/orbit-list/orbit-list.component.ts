@@ -9,7 +9,6 @@ import { Satellite } from '../satellite';
 })
 export class OrbitListComponent implements OnInit {
   @Input() satellites: Satellite[];
-  changeColor: string = 'red';
 
   constructor() { }
 
@@ -29,4 +28,11 @@ export class OrbitListComponent implements OnInit {
     });
  }
 
+ isEven(value: number): boolean {
+   if (value % 2 === 0) {
+     return true;
+   } else {
+     return false;
+   }
+ }
 }

@@ -7,14 +7,14 @@
       <th>Orbit Type</th>
       <th>Launch Date</th>
    </tr>
- <tr *ngFor="let satellite of satellites">
-     <th>{{satellite.name}}</th>
-     <th *ngIf="satellite.shouldShowWarning(); else noSpaceDebris" [class.warning] = "changeColor">{{satellite.type}}</th>
-     <ng-template #noSpaceDebris>
-        <th>{{satellite.type}}</th>
-    </ng-template>
-     <th>{{satellite.operational}}</th>
-     <th>{{satellite.orbitType}}</th>
-     <th>{{satellite.launchDate}}</th>
- </tr>
+    <tr *ngFor="let satellite of satellites" [class.row-color]="isEven(satellites.indexOf(satellite))">
+        <th>{{satellite.name}}</th>
+        <th *ngIf="satellite.shouldShowWarning(); else noSpaceDebris" [class.warning] = true>{{satellite.type}}</th>
+        <ng-template #noSpaceDebris>
+            <th>{{satellite.type}}</th>
+        </ng-template>
+        <th>{{satellite.operational}}</th>
+        <th>{{satellite.orbitType}}</th>
+        <th>{{satellite.launchDate}}</th>
+    </tr>
 </table>
