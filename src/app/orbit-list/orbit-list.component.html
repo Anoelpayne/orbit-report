@@ -9,12 +9,9 @@
    </tr>
     <tr *ngFor="let satellite of satellites" [class.row-color]="isEven(satellites.indexOf(satellite))">
         <th>{{satellite.name}}</th>
-        <th *ngIf="satellite.shouldShowWarning(); else noSpaceDebris" [class.warning] = true>{{satellite.type}}</th>
-        <ng-template #noSpaceDebris>
-            <th>{{satellite.type}}</th>
-        </ng-template>
-        <th>{{satellite.operational}}</th>
-        <th>{{satellite.orbitType}}</th>
-        <th>{{satellite.launchDate}}</th>
+        <td [class.warning] ="satellite.shouldShowWarning()">{{satellite.type}}</td>
+        <td>{{satellite.operational}}</td>
+        <td>{{satellite.orbitType}}</td>
+        <td>{{satellite.launchDate}}</td>
     </tr>
 </table>
